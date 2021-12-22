@@ -1,17 +1,20 @@
+import timeit
+def fib (n):
+    a, b = 1, 2
+    li = [] 
+    li.append(a)
+    li.append(b)
+    begin = timeit.timeit()
+    while n > 1:
+        print (a, ' ',b,end=' ')
+        a, b = b, a+b
+        n-=1
+        li.append(a)
+        li.append(b)
+    end = timeit.timeit()
+    print ("time: ",end)
+
 def main ():
-        print (fib(500))
-
-
-
-
-def fib(n):
-    if n < 0:
-        print ("incorrect input")
-    elif n == 0:
-        return 0
-    elif n ==1 or n == 2:
-        return 1
-    else:
-        return fib(n-1) + fib(n-2)
-
+    fib(5000)
 main ()
+
